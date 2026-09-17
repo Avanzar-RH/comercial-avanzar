@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brochure Institucional | Avanzar RH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        avanzar: {
+                            DEFAULT: '#0062A3',
+                            dark: '#004B7D',
+                            light: '#E6F0F8',
+                            border: '#B3D4EC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white !important; padding: 0 !important; }
+            .page-break { page-break-after: always; }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased py-6">
+
+    <!-- Botón Impresión PDF -->
+    <div class="max-w-4xl mx-auto px-4 mb-4 text-right no-print">
+        <button onclick="window.print()" class="bg-avanzar hover:bg-avanzar-dark text-white font-bold text-xs px-5 py-3 rounded-xl transition shadow-md inline-flex items-center gap-2">
+            <span>Guardar / Imprimir Brochure PDF</span> 🖨️
+        </button>
+    </div>
+
+    <!-- HOJA A4 / DOSSIER CORPORATIVO -->
+    <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+
+        <!-- PÁGINA 1: PRESENTACIÓN & PROPUESTA DE VALOR -->
+        <div class="p-8 md:p-12 border-b border-slate-200 min-h-[1000px] flex flex-col justify-between page-break">
+            
+            <div>
+                <!-- Header -->
+                <div class="flex justify-between items-start gap-4 pb-6 border-b border-slate-100">
+                    <div class="flex items-center space-x-4">
+                        <img src="logo.png" alt="Avanzar RH" class="h-14 w-auto" onerror="this.onerror=null; this.src='https://avanzargestionhumana.com/wp-content/uploads/2023/08/logo-avanzar.png';">
+                        <div>
+                            <h1 class="font-extrabold text-2xl text-avanzar leading-tight">Avanzar RH</h1>
+                            <p class="text-xs font-semibold text-slate-500">Gestión Humana Estratégica & Eficiencia Operativa</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="bg-avanzar-light text-avanzar font-extrabold text-[11px] px-3 py-1 rounded-full uppercase tracking-wider block">Dossier Institucional</span>
+                        <span class="text-[11px] text-slate-400 font-medium mt-1 block">Uruguay • Pymes, Agro & Real Estate</span>
+                    </div>
+                </div>
+
+                <!-- Hero -->
+                <div class="mt-10">
+                    <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Tu Aliado en Gestión Humana</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 leading-tight">
+                        Estructura, Alineación y Talento para el Crecimiento de tu Empresa
+                    </h2>
+                    <p class="text-sm md:text-base text-slate-600 mt-4 leading-relaxed">
+                        Acompañamos a directores y gerentes a liberar tiempo operativo, organizar mandos medios y seleccionar perfiles clave con procesos ágiles y garantía por escrito.
+                    </p>
+                </div>
+
+                <!-- Impacto -->
+                <div class="bg-avanzar-light border-2 border-avanzar-border rounded-2xl p-6 mt-8 shadow-sm">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div>
+                            <h3 class="text-xs font-extrabold text-avanzar uppercase tracking-wider">Optimización Directiva</h3>
+                            <p class="text-base font-bold text-slate-900 mt-1">¿Sabías que la falta de estructura le resta hasta 10 horas semanales a la gerencia?</p>
+                            <p class="text-xs text-slate-600 mt-1">Nuestras soluciones ordenan las funciones operativas para que recuperes el foco estratégico de tu negocio.</p>
+                        </div>
+                        <div class="flex gap-3 shrink-0 text-center">
+                            <div class="bg-white p-3 rounded-xl border border-avanzar-border shadow-sm">
+                                <span class="block text-lg font-black text-amber-600">14 Días</span>
+                                <span class="text-[10px] text-slate-600 font-medium">Sprints Ágiles</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-avanzar-border shadow-sm">
+                                <span class="block text-lg font-black text-emerald-600">90 Días</span>
+                                <span class="text-[10px] text-slate-600 font-medium">Garantía Reemplazo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pilares -->
+                <div class="grid md:grid-cols-3 gap-4 mt-8">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <span class="text-xl">⚙️</span>
+                        <h4 class="font-bold text-xs text-slate-900 mt-1">Agilidad Operativa</h4>
+                        <p class="text-[11px] text-slate-500 mt-1">Proyectos empaquetados con inicio y fin sin burocracia.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <span class="text-xl">🛡️</span>
+                        <h4 class="font-bold text-xs text-slate-900 mt-1">Garantía de Calidad</h4>
+                        <p class="text-[11px] text-slate-500 mt-1">Cobertura de 90 días en todos nuestros procesos de Selección.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <span class="text-xl">💡</span>
+                        <h4 class="font-bold text-xs text-slate-900 mt-1">Herramientas de IA</h4>
+                        <p class="text-[11px] text-slate-500 mt-1">Aplicación de Inteligencia Artificial para diagnósticos y talleres de clima.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Noelia -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 mt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-avanzar rounded-full flex items-center justify-center font-bold text-lg shrink-0">NG</div>
+                    <div>
+                        <h3 class="font-bold text-sm">Lic. Noelia Gorgerino</h3>
+                        <p class="text-xs text-slate-300">Directora de Avanzar RH • Especialista en Gestión Humana</p>
+                    </div>
+                </div>
+                <div class="text-right text-xs text-slate-300">
+                    <p>📲 <strong>+598 99 343 810</strong></p>
+                    <p>✉️ avanzarrh@gmail.com</p>
+                    <p>🌐 avanzargestionhumana.com</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- PÁGINA 2: PROGRAMAS & PUENTE CON QR AUTOMÁTICO -->
+        <div class="p-8 md:p-12 min-h-[1000px] flex flex-col justify-between">
+            
+            <div>
+                <h2 class="text-2xl font-extrabold text-slate-900 text-center mb-2">Modelos de Trabajo & Programas</h2>
+                <p class="text-xs text-slate-500 text-center mb-8">Diseñados para adaptarse exactamente al tamaño y momento de tu empresa</p>
+
+                <!-- MODELO 1: SPRINTS (ÁMBAR/COBRE) -->
+                <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-6 mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="bg-amber-700 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">
+                            🟠 Soluciones Puntuales (Sprints de 14 Días)
+                        </span>
+                        <span class="text-[11px] text-amber-900 font-bold">Intervenciones Ágiles de Alto Impacto</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-xl border border-amber-200 text-xs">
+                            <h4 class="font-bold text-slate-900 text-sm">1. Ordenamiento Operativo</h4>
+                            <p class="text-[11px] text-slate-500 mt-1">Mapeo de funciones, eliminación de solapamientos y manuales de puestos de trabajo.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border-2 border-emerald-500 text-xs relative">
+                            <span class="absolute -top-2.5 right-2 bg-emerald-600 text-white text-[8px] font-extrabold px-2 py-0.5 rounded">Garantía 90 Días</span>
+                            <h4 class="font-bold text-slate-900 text-sm">2. Selección por Competencias</h4>
+                            <p class="text-[11px] text-slate-500 mt-1">Búsqueda de perfiles clave con ternas evaluadas en profundidad e informes.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-amber-200 text-xs">
+                            <h4 class="font-bold text-slate-900 text-sm">3. Clima Laboral & IA</h4>
+                            <p class="text-[11px] text-slate-500 mt-1">Diagnóstico rápido de fricciones y taller práctico de Inteligencia Artificial para el equipo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODELO 2: MEMBRESÍAS (AZUL AVANZAR) -->
+                <div class="bg-avanzar-light border border-avanzar-border rounded-2xl p-6 mb-8">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="bg-avanzar text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">
+                            🔵 Acompañamiento Mensual (HRBP Externalizado)
+                        </span>
+                        <span class="text-[11px] text-avanzar-dark font-bold">Dirección de RRHH Permanente</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs">
+                            <h4 class="font-bold text-slate-900 text-sm">Plan Esencial</h4>
+                            <p class="text-[11px] text-slate-500 mt-1">Prevención de imprevistos laborales, canal directo de consultas y revisión de legajos.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border-2 border-avanzar text-xs">
+                            <h4 class="font-bold text-slate-900 text-sm">Plan Estratégico ⭐</h4>
+                            <p class="text-[11px] text-slate-500 mt-1">Reporte Pulso Mensual + Evaluación de Clima + Bonificación en Selección.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs">
+                            <h4 class="font-bold text-slate-900 text-sm">Plan Integral</h4>
+                            <p class="text-[11px] text-slate-500 mt-1">Consultoría in-situ presencial, tableros de KPIs en tiempo real y auditoría continua.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOQUE CTA + QR AUTOMÁTICO -->
+                <div class="bg-slate-900 text-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-2">
+                        <span class="bg-emerald-500 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded uppercase">Acceso Interactivo</span>
+                        <h3 class="text-base font-bold">¿Querés evaluar a tu empresa o ver los planes en detalle?</h3>
+                        <p class="text-xs text-slate-300">Escaneá el código QR con tu celular o hacé clic en los botones para ingresar a la plataforma digital o realizar el autodiagnóstico sin costo.</p>
+                        <div class="pt-2 flex flex-wrap gap-2">
+                            <a href="https://avanzar-rh.github.io/comercial-avanzar/" target="_blank" class="bg-avanzar hover:bg-avanzar-dark text-white font-bold text-[11px] px-3.5 py-2 rounded-xl transition inline-block">Ver Web Comercial 🌐</a>
+                            <a href="https://tally.so/r/VLWdL6" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-[11px] px-3.5 py-2 rounded-xl transition inline-block">Hacer Test Tally 📝</a>
+                        </div>
+                    </div>
+                    
+                    <!-- QR GENERADO AUTOMÁTICAMENTE -->
+                    <div class="shrink-0 text-center bg-white p-3 rounded-2xl border-2 border-avanzar shadow-md">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://avanzar-rh.github.io/comercial-avanzar/" alt="QR Web Comercial Avanzar RH" class="w-24 h-24 mx-auto rounded-lg">
+                        <span class="text-[9px] font-extrabold text-slate-800 uppercase block mt-2 tracking-wider">Escaneá con tu celular</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-[11px] text-slate-400 gap-2">
+                <p>© 2026 Avanzar RH - Lic. Noelia Gorgerino | Soluciones para Pymes, Agro e Inmobiliarias</p>
+                <p class="font-bold text-slate-600">🌐 avanzargestionhumana.com • 📲 099 343 810</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
