@@ -41,33 +41,49 @@
     </div>
 
     <!-- CONTENEDOR PRINCIPAL -->
-    <div class="max-w-4xl mx-auto bg-slate-50 border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+    <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
 
         <!-- ==========================================
-             PÁGINA 1: CARÁTULA A4 DOSSIER (GARANTIZADA LECTURA)
+             PÁGINA 1: CARÁTULA A4 DOSSIER - MARCA DE AGUA
              ========================================== -->
-        <div class="min-h-[1050px] flex flex-col justify-between relative page-break p-6 md:p-10 bg-white">
+        <div class="min-h-[1050px] flex flex-col justify-between relative page-break p-8 md:p-12 bg-white overflow-hidden">
             
-            <div class="space-y-6">
-                <!-- HEADER CLARO -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div class="flex items-center gap-4">
+            <!-- MARCA DE AGUA SVG CON CÍRCULOS Y ONDAS CELESTES -->
+            <div class="absolute inset-0 pointer-events-none z-0">
+                <svg width="100%" height="100%" viewBox="0 0 800 1050" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <!-- Círculo Superior Izquierdo Celeste Pálido -->
+                    <circle cx="50" cy="80" r="280" fill="#E6F0F8" opacity="0.7"/>
+                    <circle cx="50" cy="80" r="340" stroke="#B3D4EC" stroke-width="2" opacity="0.5" stroke-dasharray="8 8"/>
+                    
+                    <!-- Gran Onda Azul Inferior Derecha -->
+                    <path d="M 300 1050 C 450 850, 600 900, 800 700 L 800 1050 Z" fill="#0062A3" opacity="0.08"/>
+                    <circle cx="750" cy="850" r="220" fill="#0062A3" opacity="0.06"/>
+                    <circle cx="750" cy="850" r="300" stroke="#0062A3" stroke-width="1.5" opacity="0.15"/>
+                </svg>
+            </div>
+
+            <!-- CONTENIDO DE LA PORTADA -->
+            <div class="relative z-10 flex flex-col justify-between h-full min-h-[980px] space-y-8">
+                
+                <!-- HEADER / CABECERA -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-200">
+                    <div class="bg-white p-3 rounded-2xl shadow-sm border border-slate-100 inline-block">
                         <img src="logo-avanzar.png" alt="Avanzar RH" class="h-14 w-auto object-contain" onerror="this.onerror=null; this.src='https://avanzargestionhumana.com/wp-content/uploads/2023/08/logo-avanzar.png';">
                     </div>
-                    <div class="text-center md:text-right">
+                    <div class="text-left md:text-right">
                         <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[10px] px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block border border-emerald-300">
                             Propuesta Comercial Formal
                         </span>
-                        <h2 class="text-xl font-black text-slate-900 mt-1">Noelia Gorgerino</h2>
+                        <h2 class="text-2xl font-black text-slate-900 mt-1">Noelia Gorgerino</h2>
                         <p class="text-xs font-semibold text-avanzar">Directora de Avanzar RH • Lic. en Gestión de RRHH</p>
                     </div>
                 </div>
 
-                <!-- CUERPO PRINCIPAL CON BLOQUES SÓLIDOS (SINO ERRORES DE CONTRASTE) -->
-                <div class="grid md:grid-cols-12 gap-6 my-4">
+                <!-- CUERPO PRINCIPAL DOSSIER -->
+                <div class="grid md:grid-cols-12 gap-8 my-auto items-center">
                     
-                    <!-- BLOQUE IZQUIERDO: AZUL SÓLIDO (QR & DOCUMENTO DE INVERSIÓN) -->
-                    <div class="md:col-span-5 bg-gradient-to-br from-avanzar to-avanzar-dark text-white p-8 rounded-2xl shadow-lg flex flex-col justify-between space-y-6">
+                    <!-- LADO IZQUIERDO: TARJETA AZUL CORPORATIVA CON QR -->
+                    <div class="md:col-span-5 bg-gradient-to-br from-avanzar to-avanzar-dark text-white p-8 rounded-3xl shadow-xl flex flex-col justify-between space-y-6">
                         <div class="space-y-4">
                             <span class="bg-white/20 text-white font-extrabold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider inline-block border border-white/20">
                                 Documento de Inversión
@@ -91,14 +107,14 @@
                         </div>
                     </div>
 
-                    <!-- BLOQUE DERECHO: FONDO CLARO (TITULAR Y RESUMEN PRECIOS) -->
-                    <div class="md:col-span-7 bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
+                    <!-- LADO DERECHO: TITULAR Y RESUMEN FINANCIERO -->
+                    <div class="md:col-span-7 space-y-6">
                         <div class="space-y-4">
                             <span class="bg-avanzar-light text-avanzar font-bold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block border border-avanzar-border">
                                 📋 Propuesta de Negocio
                             </span>
 
-                            <h1 class="text-3xl md:text-4xl font-black leading-tight text-slate-900 tracking-tight">
+                            <h1 class="text-3xl md:text-5xl font-black leading-tight text-slate-900 tracking-tight">
                                 Cotización &amp; Esquema de Servicios
                             </h1>
 
@@ -107,41 +123,42 @@
                             </p>
                         </div>
 
-                        <!-- Tarjetas de Inversión -->
-                        <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-200">
-                            <div class="bg-amber-50/90 border border-amber-200 p-4 rounded-xl">
+                        <!-- Tarjetas de Inversión en Resaltado -->
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200">
+                            <div class="bg-amber-50/90 border border-amber-200 p-4 rounded-2xl shadow-sm">
                                 <span class="block text-[10px] font-bold text-amber-900 uppercase">Sprints Operativos</span>
-                                <span class="block text-lg font-black text-amber-950 mt-1">Desde $19.900</span>
+                                <span class="block text-xl font-black text-amber-950 mt-1">Desde $19.900</span>
                                 <span class="text-[10px] text-amber-800 font-medium block mt-0.5">Proyectos de 14 días</span>
                             </div>
 
-                            <div class="bg-avanzar-light border border-avanzar-border p-4 rounded-xl">
+                            <div class="bg-avanzar-light/90 border border-avanzar-border p-4 rounded-2xl shadow-sm">
                                 <span class="block text-[10px] font-bold text-avanzar uppercase">Membresías / Mes</span>
-                                <span class="block text-lg font-black text-avanzar-dark mt-1">Desde $10.900</span>
+                                <span class="block text-xl font-black text-avanzar-dark mt-1">Desde $10.900</span>
                                 <span class="text-[10px] text-avanzar font-medium block mt-0.5">Acompañamiento continuo</span>
                             </div>
                         </div>
                     </div>
 
                 </div>
-            </div>
 
-            <!-- PIE DE PORTADA DOSSIER (BARRA AZUL OSCURA INTEGRADA DE ALTO CONTRASTE) -->
-            <div class="bg-avanzar-dark text-white p-4 rounded-2xl shadow-md flex flex-col md:flex-row justify-between items-center text-xs gap-3">
-                <div class="flex flex-wrap gap-2 font-bold">
-                    <a href="https://wa.me/59899343810" target="_blank" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-xl border border-white/20 transition flex items-center gap-1.5">
-                        📲 <span>+598 99 343 810</span>
-                    </a>
-                    <a href="mailto:avanzarrh@gmail.com" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-xl border border-white/20 transition flex items-center gap-1.5">
-                        ✉️ <span>avanzarrh@gmail.com</span>
-                    </a>
+                <!-- PIE DE PORTADA CON BARRA CORPORATIVA -->
+                <div class="bg-slate-900 text-white p-4 rounded-2xl shadow-md flex flex-col md:flex-row justify-between items-center text-xs gap-3">
+                    <div class="flex flex-wrap gap-2 font-bold">
+                        <a href="https://wa.me/59899343810" target="_blank" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-xl border border-white/20 transition flex items-center gap-1.5">
+                            📲 <span>+598 99 343 810</span>
+                        </a>
+                        <a href="mailto:avanzarrh@gmail.com" class="bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-xl border border-white/20 transition flex items-center gap-1.5">
+                            ✉️ <span>avanzarrh@gmail.com</span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="https://avanzargestionhumana.com/" target="_blank" class="font-extrabold text-blue-200 hover:text-white transition underline underline-offset-4 text-sm">
+                            🌐 avanzargestionhumana.com
+                        </a>
+                    </div>
                 </div>
 
-                <div>
-                    <a href="https://avanzargestionhumana.com/" target="_blank" class="font-extrabold text-blue-200 hover:text-white transition underline underline-offset-4 text-sm">
-                        🌐 avanzargestionhumana.com
-                    </a>
-                </div>
             </div>
 
         </div>
