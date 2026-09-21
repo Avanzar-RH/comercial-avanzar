@@ -44,14 +44,14 @@
     <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
 
         <!-- ==========================================
-             PÁGINA 1: CARÁTULA DOSSIER (COLORES DE TEXTO CORREGIDOS)
+             PÁGINA 1: CARÁTULA DOSSIER (PALETA DE AZULES)
              ========================================== -->
         <div class="min-h-[1050px] flex flex-col justify-between bg-white text-slate-900 relative page-break overflow-hidden">
             
-            <!-- Gran Arco Azul Orgánico (Lado Izquierdo) -->
+            <!-- Gran Arco Azul Orgánico -->
             <div class="absolute -left-20 -top-20 w-[460px] h-[1150px] bg-gradient-to-br from-avanzar to-avanzar-dark rounded-r-[260px] shadow-2xl z-0 pointer-events-none hidden md:block"></div>
 
-            <!-- Malla SVG Decorativa en el Fondo -->
+            <!-- Malla SVG Decorativa -->
             <div class="absolute inset-0 opacity-5 pointer-events-none z-0">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="20%" cy="80%" r="300" fill="none" stroke="#0062A3" stroke-width="40"/>
@@ -62,19 +62,18 @@
             <!-- CONTENIDO DE LA PORTADA DOSSIER -->
             <div class="relative z-10 p-10 md:p-14 flex flex-col justify-between h-full min-h-[1050px]">
                 
-                <!-- HEADER / CABECERA DOSSIER -->
+                <!-- HEADER / CABECERA EN AZULES -->
                 <div class="grid md:grid-cols-12 gap-6 items-center">
-                    <!-- Logo Lado Izquierdo -->
                     <div class="md:col-span-5 text-left">
                         <div class="bg-white p-3 rounded-2xl shadow-lg inline-block border border-slate-100">
                             <img src="logo-avanzar.png" alt="Avanzar RH" class="h-14 w-auto object-contain" onerror="this.onerror=null; this.src='https://avanzargestionhumana.com/wp-content/uploads/2023/08/logo-avanzar.png';">
                         </div>
                     </div>
 
-                    <!-- Titular Lado Derecho -->
                     <div class="md:col-span-7 text-left md:text-right space-y-1">
-                        <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[10px] px-3.5 py-1 rounded-full uppercase tracking-widest inline-block border border-emerald-200 mb-1">
-                            Propuesta Comercial Formal
+                        <!-- TÍTULO PRINCIPAL EN AZUL NOCHE CORPORATIVO -->
+                        <span class="bg-avanzar-dark text-white font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-widest inline-block shadow-md mb-2 border border-blue-900">
+                            📊 DOSSIER DE SERVICIOS &amp; TARIFARIO $ UYU
                         </span>
                         <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Noelia Gorgerino</h2>
                         <p class="text-xs md:text-sm font-semibold text-avanzar">Directora de Avanzar RH • Lic. en Gestión de RRHH</p>
@@ -84,7 +83,6 @@
                 <!-- CUERPO PRINCIPAL DOSSIER -->
                 <div class="grid md:grid-cols-12 gap-8 items-center my-auto py-8">
                     
-                    <!-- Lado Izquierdo Azul: QR -->
                     <div class="md:col-span-5 text-white space-y-6 md:pr-4">
                         <div class="bg-avanzar/20 md:bg-transparent p-6 md:p-0 rounded-2xl space-y-4">
                             <span class="bg-white/20 text-white font-extrabold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider inline-block border border-white/20">
@@ -92,14 +90,13 @@
                             </span>
                             
                             <h3 class="text-xl font-extrabold text-white leading-snug">
-                                Tarifario &amp; Soluciones B2B
+                                Propuesta Económica B2B
                             </h3>
                             
                             <p class="text-xs text-blue-100 leading-relaxed">
-                                Valores en Pesos Uruguayos ($ UYU), cotizaciones a medida y respaldo de reemplazo por escrito.
+                                Valores transparentes en Pesos Uruguayos ($ UYU), cotizaciones a medida y respaldo de reemplazo por escrito.
                             </p>
 
-                            <!-- QR Code Web Comercial -->
                             <div class="pt-4 flex flex-col items-center md:items-start space-y-2">
                                 <a href="https://avanzar-rh.github.io/comercial-avanzar/" target="_blank" class="bg-white p-3 rounded-2xl border-2 border-avanzar shadow-md inline-block hover:scale-105 transition">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://avanzar-rh.github.io/comercial-avanzar/" alt="QR Web Comercial Avanzar" class="w-28 h-28">
@@ -109,25 +106,21 @@
                         </div>
                     </div>
 
-                    <!-- Lado Derecho: Titulares en Colores Oscuros de Alto Contraste -->
                     <div class="md:col-span-7 text-slate-900 space-y-6 md:pl-4">
                         <div class="space-y-4">
                             <span class="bg-avanzar-light text-avanzar font-extrabold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block border border-avanzar-border shadow-sm">
                                 📋 Propuesta de Negocio
                             </span>
 
-                            <!-- TITULO CON COLOR OSCURO ALTO CONTRASTE -->
                             <h1 class="text-3xl md:text-5xl font-black leading-tight text-slate-900 tracking-tight">
                                 Cotización &amp; Esquema de Servicios
                             </h1>
 
-                            <!-- BAJADA CON COLOR OSCURO LEGIBLE -->
                             <p class="text-sm md:text-base text-slate-700 font-medium leading-relaxed">
                                 Desglose transparente de honorarios para Sprints de Ordenamiento Operativo de 14 días y Membresías de Dirección de Gestión Humana externalizada.
                             </p>
                         </div>
 
-                        <!-- Resumen Financiero -->
                         <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200">
                             <div class="bg-amber-50/90 border border-amber-200 p-4 rounded-2xl shadow-sm">
                                 <span class="block text-[11px] font-bold text-amber-900 uppercase">Sprints Operativos</span>
@@ -145,9 +138,8 @@
 
                 </div>
 
-                <!-- PIE DE PORTADA CORREGIDO CON TEXTO OSCURO Y CONTRASTE -->
+                <!-- PIE DE PORTADA DOSSIER -->
                 <div class="pt-6 border-t border-slate-200 grid md:grid-cols-12 items-center text-xs gap-4 relative z-10">
-                    <!-- Datos de Contacto con Fondo Contenedor Claro y Texto Oscuro -->
                     <div class="md:col-span-6 flex flex-wrap gap-2 text-slate-900 font-bold">
                         <a href="https://wa.me/59899343810" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-900 px-3 py-1.5 rounded-xl border border-slate-300 transition flex items-center gap-1.5 shadow-sm">
                             📲 <span>+598 99 343 810</span>
@@ -157,7 +149,6 @@
                         </a>
                     </div>
 
-                    <!-- Enlace a la Web Oficial -->
                     <div class="md:col-span-6 text-left md:text-right">
                         <a href="https://avanzargestionhumana.com/" target="_blank" class="font-black text-avanzar hover:text-avanzar-dark transition underline underline-offset-4 text-sm">
                             🌐 avanzargestionhumana.com
@@ -169,10 +160,7 @@
 
         </div>
 
-
-        <!-- ==========================================
-             PÁGINA 2: TARIFARIO FORMAL EN CLARO
-             ========================================== -->
+        <!-- PÁGINA 2 HOJA INTERNA -->
         <div class="p-8 md:p-12 min-h-[1000px] flex flex-col justify-between">
             <div>
                 <div class="flex justify-between items-center pb-6 border-b border-slate-200 mb-6">
@@ -180,7 +168,6 @@
                     <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Tarifario Formal 2026</span>
                 </div>
 
-                <!-- BLOQUE 1: SPRINTS -->
                 <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-5 mb-5">
                     <div class="flex justify-between items-center mb-3">
                         <span class="bg-amber-700 text-white text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase">
@@ -201,15 +188,16 @@
                             </div>
                         </div>
 
-                        <div class="bg-white p-3.5 rounded-xl border-2 border-emerald-500 text-xs flex flex-col justify-between relative">
-                            <span class="absolute -top-2 right-2 bg-emerald-600 text-white text-[8px] font-extrabold px-2 py-0.5 rounded">Respaldo 90 Días</span>
+                        <!-- SELECCIÓN REEMPLAZADA A AZUL CORPORATIVO -->
+                        <div class="bg-white p-3.5 rounded-xl border-2 border-avanzar text-xs flex flex-col justify-between relative">
+                            <span class="absolute -top-2 right-2 bg-avanzar text-white text-[8px] font-extrabold px-2 py-0.5 rounded">Respaldo 90 Días</span>
                             <div>
                                 <h4 class="font-bold text-slate-900">2. Selección de Personal</h4>
                                 <p class="text-[10px] text-slate-500 mt-0.5">Terna evaluada en profundidad con informes psicotécnicos.</p>
                             </div>
                             <div class="mt-3 pt-2 border-t border-slate-100 flex justify-between items-end">
                                 <span class="text-[10px] text-slate-400">Honorario:</span>
-                                <span class="font-black text-emerald-950 text-sm">1 Sueldo Líquido</span>
+                                <span class="font-black text-avanzar-dark text-sm">1 Sueldo Líquido</span>
                             </div>
                         </div>
 
@@ -226,7 +214,6 @@
                     </div>
                 </div>
 
-                <!-- BLOQUE 2: MEMBRESÍAS -->
                 <div class="bg-avanzar-light border border-avanzar-border rounded-2xl p-5 mb-5">
                     <div class="flex justify-between items-center mb-3">
                         <span class="bg-avanzar text-white text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase">
@@ -255,7 +242,7 @@
                             </div>
                             <div class="mt-3 pt-2 border-t border-slate-100 text-right">
                                 <span class="font-black text-avanzar-dark text-sm">$18.900 UYU/mes</span>
-                                <span class="block text-[9px] text-emerald-700 font-bold">($630 UYU/día)</span>
+                                <span class="block text-[9px] text-avanzar font-bold">($630 UYU/día)</span>
                             </div>
                         </div>
 
@@ -272,7 +259,6 @@
                     </div>
                 </div>
 
-                <!-- CONDICIONES -->
                 <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-[11px] text-slate-600 space-y-1">
                     <h4 class="font-bold text-slate-800 uppercase text-[10px]">Condiciones Comerciales:</h4>
                     <p>• <strong>Forma de pago Sprints:</strong> 50% al inicio del proyecto y 50% contra entrega de informe final.</p>
@@ -281,7 +267,6 @@
                 </div>
             </div>
 
-            <!-- Footer -->
             <div class="pt-4 border-t border-slate-200 flex justify-between items-center text-[11px] text-slate-400">
                 <p>© 2026 Avanzar RH - Lic. Noelia Gorgerino</p>
                 <a href="https://avanzargestionhumana.com/" target="_blank" class="font-bold text-slate-600 hover:text-avanzar transition">
