@@ -24,10 +24,11 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 0;
+                margin: 0 !important;
             }
             .no-print { display: none !important; }
             body { 
@@ -44,9 +45,12 @@
                 max-width: 100% !important;
                 width: 100% !important;
             }
-            .page-break { 
-                page-break-after: always; 
-                height: 100vh;
+            .a4-page { 
+                page-break-after: always !important; 
+                break-after: page !important;
+                height: 297mm !important;
+                max-height: 297mm !important;
+                box-sizing: border-box !important;
             }
         }
     </style>
@@ -63,87 +67,79 @@
     <!-- CONTENEDOR PRINCIPAL -->
     <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden page-container">
 
-        <!-- ==========================================
-             PÁGINA 1: CARÁTULA BROCHURE INSTITUCIONAL
-             ========================================== -->
-        <div class="min-h-[1050px] flex flex-col justify-between bg-gradient-to-br from-avanzar to-avanzar-dark text-white relative page-break overflow-hidden">
+        <!-- PÁGINA 1: CARÁTULA BROCHURE (ESTRUCTURA MODERNA SIN CURVAS QUE SE PISEN) -->
+        <div class="a4-page min-h-[1000px] flex flex-col justify-between bg-slate-900 text-white relative p-6 md:p-8 overflow-hidden">
             
-            <!-- Gran Arco Blanco Orgánico -->
-            <div class="absolute -left-20 -top-20 w-[460px] h-[1150px] bg-white rounded-r-[260px] shadow-2xl z-0 pointer-events-none hidden md:block"></div>
-
-            <!-- Malla SVG Decorativa -->
-            <div class="absolute inset-0 opacity-10 pointer-events-none z-0">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="85%" cy="20%" r="300" fill="none" stroke="#FFFFFF" stroke-width="40"/>
-                    <circle cx="95%" cy="80%" r="200" fill="none" stroke="#FFFFFF" stroke-width="20"/>
-                </svg>
+            <!-- Fondo dividido estrictamente en 2 secciones colindantes -->
+            <div class="absolute inset-0 grid grid-cols-12 pointer-events-none z-0">
+                <div class="col-span-5 bg-slate-100 border-r border-slate-200"></div>
+                <div class="col-span-7 bg-gradient-to-br from-avanzar to-avanzar-dark"></div>
             </div>
 
-            <!-- CONTENIDO DE LA PORTADA -->
-            <div class="relative z-10 p-10 pt-12 md:p-14 md:pt-16 flex flex-col justify-between h-full min-h-[1050px]">
+            <div class="relative z-10 flex flex-col justify-between h-full space-y-4">
                 
-                <!-- HEADER / CABECERA CON TÍTULO DISTINTIVO -->
-                <div class="grid md:grid-cols-12 gap-6 items-center">
-                    <div class="md:col-span-5 text-left">
-                        <div class="bg-white p-3 md:p-0 rounded-2xl md:bg-transparent shadow-sm md:shadow-none inline-block">
-                            <img src="logo-avanzar.png" alt="Avanzar RH" class="h-16 w-auto object-contain" onerror="this.onerror=null; this.src='https://avanzargestionhumana.com/wp-content/uploads/2023/08/logo-avanzar.png';">
-                        </div>
+                <!-- HEADER UNIFICADO -->
+                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-md flex flex-col md:flex-row justify-between items-center gap-4 text-slate-900">
+                    <div class="flex items-center gap-4">
+                        <img src="logo-avanzar.png" alt="Avanzar RH" class="h-11 w-auto object-contain" onerror="this.onerror=null; this.src='https://avanzargestionhumana.com/wp-content/uploads/2023/08/logo-avanzar.png';">
                     </div>
-
-                    <div class="md:col-span-7 text-left md:text-right space-y-1">
-                        <span class="bg-white text-avanzar-dark font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-widest inline-block shadow-md mb-2 border border-blue-100">
+                    <div class="text-center md:text-right">
+                        <span class="bg-avanzar-light text-avanzar-dark font-black text-xs px-3.5 py-1 rounded-full uppercase tracking-widest inline-block border border-avanzar-border">
                             📘 BROCHURE INSTITUCIONAL 2026
                         </span>
-                        <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight">Noelia Gorgerino</h2>
-                        <p class="text-xs md:text-sm font-semibold text-blue-100">Lic. en Gestión de RRHH</p>
+                        <h2 class="text-lg font-black text-slate-900 mt-0.5">Noelia Gorgerino</h2>
+                        <p class="text-[11px] font-semibold text-avanzar">Lic. en Gestión de RRHH</p>
                     </div>
                 </div>
 
-                <!-- CUERPO PRINCIPAL -->
-                <div class="grid md:grid-cols-12 gap-8 items-center my-auto py-8">
+                <!-- CUERPO PRINCIPAL DIVIDIDO EN 2 COLUMNAS HERMÉTICAS -->
+                <div class="grid md:grid-cols-12 gap-6 my-auto items-stretch">
                     
-                    <div class="md:col-span-5 text-slate-900 space-y-6 md:pr-4">
-                        <div class="bg-slate-50 md:bg-transparent p-6 md:p-0 rounded-2xl border border-slate-200 md:border-none text-center md:text-left space-y-4">
-                            <h3 class="text-xs font-black text-avanzar uppercase tracking-widest">Avanzar RH</h3>
-                            <h4 class="text-xl font-extrabold text-slate-900 leading-snug">
+                    <!-- LADO IZQUIERDO: 100% SOBRE FONDO BLANCO (SIN INVASIONES DE AZUL) -->
+                    <div class="md:col-span-5 bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <span class="bg-avanzar-light text-avanzar-dark font-black text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider inline-block">Avanzar RH</span>
+                            <h4 class="text-base font-extrabold text-slate-900 leading-snug">
                                 Tu aliado estratégico en gestión y crecimiento empresarial.
                             </h4>
-                            <p class="text-xs text-slate-500 leading-relaxed">
+                            <p class="text-xs text-slate-600 leading-relaxed font-normal">
                                 Soluciones en estructura operativa, alineación de mandos medios y selección de personal para Pymes en Uruguay.
                             </p>
+                        </div>
 
-                            <div class="pt-4 flex flex-col items-center md:items-start space-y-2">
-                                <a href="https://avanzargestionhumana.com/" target="_blank" class="bg-white p-3 rounded-2xl border-2 border-avanzar shadow-md inline-block hover:scale-105 transition">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://avanzargestionhumana.com/" alt="QR Web Oficial Avanzar RH" class="w-28 h-28">
-                                </a>
-                                <span class="text-[9px] font-black text-avanzar uppercase tracking-wider">Conocé más sobre nuestra firma</span>
-                            </div>
+                        <!-- QR Code Integrado 100% Libre -->
+                        <div class="pt-2 text-center space-y-2 border-t border-slate-100">
+                            <a href="https://avanzargestionhumana.com/" target="_blank" class="bg-slate-50 p-2.5 rounded-2xl border-2 border-avanzar shadow-sm inline-block hover:scale-105 transition">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://avanzargestionhumana.com/" alt="QR Web Oficial Avanzar RH" class="w-24 h-24 mx-auto">
+                            </a>
+                            <span class="text-[9px] font-black text-avanzar uppercase tracking-wider block">Conocé más sobre nuestra firma</span>
                         </div>
                     </div>
 
-                    <div class="md:col-span-7 text-white space-y-6 md:pl-4">
-                        <div class="space-y-4">
-                            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block">
+                    <!-- LADO DERECHO: 100% SOBRE FONDO AZUL -->
+                    <div class="md:col-span-7 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-sm text-white flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">
                                 ⚡ Optimización Operativa
                             </span>
 
-                            <h1 class="text-3xl md:text-5xl font-black leading-tight text-white tracking-tight">
+                            <h1 class="text-2xl md:text-3xl font-black leading-tight text-white tracking-tight">
                                 Estructura y Talento para el Crecimiento de tu Empresa
                             </h1>
 
-                            <p class="text-sm md:text-base text-blue-100 leading-relaxed font-normal">
+                            <p class="text-xs text-blue-100 leading-relaxed font-normal">
                                 Liberamos tiempo operativo de la gerencia, ordenamos puestos de trabajo y seleccionamos perfiles clave con procesos ágiles y garantía de reemplazo.
                             </p>
                         </div>
 
-                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/20">
-                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10">
-                                <span class="block text-2xl font-black text-amber-400">14 Días</span>
-                                <span class="text-[11px] text-blue-100 font-medium">Sprints de Impacto</span>
+                        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-white/20">
+                            <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                                <span class="block text-base font-black text-amber-400">14 Días</span>
+                                <span class="text-[10px] text-blue-100 font-medium">Sprints de Impacto</span>
                             </div>
-                            <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10">
-                                <span class="block text-2xl font-black text-emerald-300">90 Días</span>
-                                <span class="text-[11px] text-blue-100 font-medium">Respaldo de Reemplazo</span>
+                            <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                                <span class="block text-base font-black text-emerald-300">90 Días</span>
+                                <span class="text-[10px] text-blue-100 font-medium">Respaldo de Reemplazo</span>
                             </div>
                         </div>
                     </div>
@@ -151,107 +147,106 @@
                 </div>
 
                 <!-- PIE DE PORTADA -->
-                <div class="pt-6 border-t border-white/20 grid md:grid-cols-12 items-center text-xs gap-4">
-                    <div class="md:col-span-6 flex flex-wrap gap-4 font-bold text-slate-900">
-                        <a href="https://wa.me/59899343810" target="_blank" class="hover:text-avanzar transition flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200">
+                <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-md flex flex-col md:flex-row justify-between items-center text-xs gap-2 text-slate-900">
+                    <div class="flex flex-wrap gap-2 font-bold">
+                        <a href="https://wa.me/59899343810" target="_blank" class="bg-slate-100 text-slate-900 hover:bg-slate-200 px-2.5 py-1 rounded-xl border border-slate-300 transition flex items-center gap-1.5">
                             📲 <span>+598 99 343 810</span>
                         </a>
-                        <a href="mailto:avanzarrh@gmail.com" class="hover:text-avanzar transition flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200">
+                        <a href="mailto:avanzarrh@gmail.com" class="bg-slate-100 text-slate-900 hover:bg-slate-200 px-2.5 py-1 rounded-xl border border-slate-300 transition flex items-center gap-1.5">
                             ✉️ <span>avanzarrh@gmail.com</span>
                         </a>
                     </div>
 
-                    <div class="md:col-span-6 text-left md:text-right">
-                        <a href="https://avanzargestionhumana.com/" target="_blank" class="font-bold text-white hover:text-blue-200 transition underline underline-offset-4">
+                    <div>
+                        <a href="https://avanzargestionhumana.com/" target="_blank" class="font-extrabold text-avanzar hover:text-avanzar-dark transition underline underline-offset-4 text-xs">
                             🌐 avanzargestionhumana.com
                         </a>
                     </div>
                 </div>
-
             </div>
 
         </div>
 
         <!-- PÁGINA 2 HOJA INTERNA -->
-        <div class="p-8 md:p-12 min-h-[1000px] flex flex-col justify-between">
+        <div class="a4-page min-h-[1000px] p-6 md:p-10 flex flex-col justify-between bg-white border-t border-avanzar-border">
             <div>
-                <h2 class="text-2xl font-extrabold text-slate-900 text-center mb-2">Modelos de Trabajo & Programas</h2>
-                <p class="text-xs text-slate-500 text-center mb-8">Diseñados para adaptarse exactamente al tamaño y momento de tu empresa</p>
+                <h2 class="text-xl font-extrabold text-slate-900 text-center mb-1">Modelos de Trabajo & Programas</h2>
+                <p class="text-xs text-slate-500 text-center mb-6">Diseñados para adaptarse exactamente al tamaño y momento de tu empresa</p>
 
-                <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-6 mb-6">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="bg-amber-700 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">
+                <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-4 mb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="bg-amber-700 text-white text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase">
                             🟠 Soluciones Puntuales (Sprints de 14 Días)
                         </span>
-                        <span class="text-[11px] text-amber-900 font-bold">Intervenciones Ágiles</span>
+                        <span class="text-[10px] text-amber-900 font-bold">Intervenciones Ágiles</span>
                     </div>
 
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="bg-white p-4 rounded-xl border border-amber-200 text-xs">
-                            <h4 class="font-bold text-slate-900 text-sm">1. Ordenamiento Operativo</h4>
-                            <p class="text-[11px] text-slate-500 mt-1">Mapeo de funciones, eliminación de solapamientos y manuales de puestos.</p>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div class="bg-white p-3 rounded-xl border border-amber-200 text-xs">
+                            <h4 class="font-bold text-slate-900">1. Ordenamiento Operativo</h4>
+                            <p class="text-[10px] text-slate-500 mt-1">Mapeo de funciones, eliminación de solapamientos y manuales de puestos.</p>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border-2 border-emerald-500 text-xs relative">
-                            <span class="absolute -top-2.5 right-2 bg-emerald-600 text-white text-[8px] font-extrabold px-2 py-0.5 rounded">Garantía 90 Días</span>
-                            <h4 class="font-bold text-slate-900 text-sm">2. Selección por Competencias</h4>
-                            <p class="text-[11px] text-slate-500 mt-1">Búsqueda de perfiles clave con ternas evaluadas en profundidad.</p>
+                        <div class="bg-white p-3 rounded-xl border-2 border-emerald-500 text-xs relative">
+                            <span class="absolute -top-2 right-2 bg-emerald-600 text-white text-[8px] font-extrabold px-1.5 py-0.5 rounded">Garantía 90 Días</span>
+                            <h4 class="font-bold text-slate-900">2. Selección por Competencias</h4>
+                            <p class="text-[10px] text-slate-500 mt-1">Búsqueda de perfiles clave con ternas evaluadas en profundidad.</p>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border border-amber-200 text-xs">
-                            <h4 class="font-bold text-slate-900 text-sm">3. Clima Laboral & IA</h4>
-                            <p class="text-[11px] text-slate-500 mt-1">Diagnóstico rápido de fricciones y taller práctico de productividad con IA.</p>
+                        <div class="bg-white p-3 rounded-xl border border-amber-200 text-xs">
+                            <h4 class="font-bold text-slate-900">3. Clima Laboral & IA</h4>
+                            <p class="text-[10px] text-slate-500 mt-1">Diagnóstico rápido de fricciones y taller práctico de productividad con IA.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-avanzar-light border border-avanzar-border rounded-2xl p-6 mb-8">
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="bg-avanzar text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">
+                <div class="bg-avanzar-light border border-avanzar-border rounded-2xl p-4 mb-5">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="bg-avanzar text-white text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase">
                             🔵 Acompañamiento Mensual (HRBP Externalizado)
                         </span>
-                        <span class="text-[11px] text-avanzar-dark font-bold">Dirección de RRHH</span>
+                        <span class="text-[10px] text-avanzar-dark font-bold">Dirección de RRHH</span>
                     </div>
 
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs">
-                            <h4 class="font-bold text-slate-900 text-sm">Plan Esencial</h4>
-                            <p class="text-[11px] text-slate-500 mt-1">Prevención de imprevistos laborales, canal directo de consultas y revisión de legajos.</p>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 text-xs">
+                            <h4 class="font-bold text-slate-900">Plan Esencial</h4>
+                            <p class="text-[10px] text-slate-500 mt-1">Prevención de imprevistos laborales, canal directo de consultas y revisión de legajos.</p>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border-2 border-avanzar text-xs">
-                            <h4 class="font-bold text-slate-900 text-sm">Plan Estratégico ⭐</h4>
-                            <p class="text-[11px] text-slate-500 mt-1">Reporte Pulso Mensual + Evaluación de Clima + Bonificación en Selección.</p>
+                        <div class="bg-white p-3 rounded-xl border-2 border-avanzar text-xs">
+                            <h4 class="font-bold text-slate-900">Plan Estratégico ⭐</h4>
+                            <p class="text-[10px] text-slate-500 mt-1">Reporte Pulso Mensual + Evaluación de Clima + Bonificación en Selección.</p>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs">
-                            <h4 class="font-bold text-slate-900 text-sm">Plan Integral</h4>
-                            <p class="text-[11px] text-slate-500 mt-1">Consultoría in-situ presencial, tableros de KPIs en tiempo real y auditoría continua.</p>
+                        <div class="bg-white p-3 rounded-xl border border-slate-200 text-xs">
+                            <h4 class="font-bold text-slate-900">Plan Integral</h4>
+                            <p class="text-[10px] text-slate-500 mt-1">Consultoría in-situ presencial, tableros de KPIs en tiempo real y auditoría continua.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-900 text-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
-                    <div class="space-y-2">
-                        <span class="bg-emerald-500 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded uppercase">Plataforma Comercial</span>
-                        <h3 class="text-base font-bold">¿Querés evaluar a tu empresa o conocer las tarifas online?</h3>
-                        <p class="text-xs text-slate-300">Escaneá este código QR para acceder directamente a nuestra web comercial interactiva.</p>
-                        <div class="pt-2 flex flex-wrap gap-2">
-                            <a href="https://avanzar-rh.github.io/comercial-avanzar/" target="_blank" class="bg-avanzar hover:bg-avanzar-dark text-white font-bold text-xs px-4 py-2.5 rounded-xl transition text-center shadow inline-block">
+                <div class="bg-slate-900 text-white rounded-2xl p-5 flex flex-col md:flex-row items-center justify-between gap-4 shadow-md">
+                    <div class="space-y-1.5">
+                        <span class="bg-emerald-500 text-white text-[9px] font-extrabold px-2 py-0.5 rounded uppercase">Plataforma Comercial</span>
+                        <h3 class="text-sm font-bold">¿Querés evaluar a tu empresa o conocer las tarifas online?</h3>
+                        <p class="text-[11px] text-slate-300">Escaneá este código QR para acceder directamente a nuestra web comercial interactiva.</p>
+                        <div class="pt-1 flex flex-wrap gap-2">
+                            <a href="https://avanzar-rh.github.io/comercial-avanzar/" target="_blank" class="bg-avanzar hover:bg-avanzar-dark text-white font-bold text-[11px] px-3.5 py-2 rounded-xl transition text-center shadow inline-block">
                                Visitar Web Comercial 🌐
                             </a>
-                            <a href="https://tally.so/r/VLWdL6" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition text-center shadow inline-block">
+                            <a href="https://tally.so/r/VLWdL6" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-[11px] px-3.5 py-2 rounded-xl transition text-center shadow inline-block">
                                Hacer Test Tally 📝
                             </a>
                         </div>
                     </div>
 
-                    <div class="shrink-0 text-center bg-white p-3 rounded-2xl border-2 border-avanzar shadow-md">
+                    <div class="shrink-0 text-center bg-white p-2.5 rounded-2xl border-2 border-avanzar shadow-md">
                         <a href="https://avanzar-rh.github.io/comercial-avanzar/" target="_blank">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://avanzar-rh.github.io/comercial-avanzar/" alt="QR Web Comercial Secundaria" class="w-24 h-24 mx-auto rounded-lg">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://avanzar-rh.github.io/comercial-avanzar/" alt="QR Web Comercial Secundaria" class="w-20 h-20 mx-auto rounded-lg">
                         </a>
-                        <span class="text-[9px] font-extrabold text-slate-800 uppercase block mt-2 tracking-wider">QR Tarifas &amp; Programas</span>
+                        <span class="text-[8px] font-extrabold text-slate-800 uppercase block mt-1 tracking-wider">QR Tarifas &amp; Programas</span>
                     </div>
                 </div>
             </div>
 
-            <div class="pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-[11px] text-slate-400 gap-2">
+            <div class="pt-4 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-400 gap-1">
                 <p>© 2026 Avanzar RH - Lic. Noelia Gorgerino | Pymes, Agro e Inmobiliarias</p>
                 <a href="https://avanzargestionhumana.com/" target="_blank" class="font-bold text-slate-600 hover:text-avanzar transition">
                     🌐 avanzargestionhumana.com • 📲 099 343 810
