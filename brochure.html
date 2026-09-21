@@ -25,9 +25,29 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
             .no-print { display: none !important; }
-            body { background-color: white !important; padding: 0 !important; }
-            .page-break { page-break-after: always; }
+            body { 
+                background-color: white !important; 
+                padding: 0 !important; 
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .page-container {
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .page-break { 
+                page-break-after: always; 
+                height: 100vh;
+            }
         }
     </style>
 </head>
@@ -41,7 +61,7 @@
     </div>
 
     <!-- CONTENEDOR PRINCIPAL -->
-    <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+    <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden page-container">
 
         <!-- ==========================================
              PÁGINA 1: CARÁTULA BROCHURE INSTITUCIONAL
@@ -60,7 +80,7 @@
             </div>
 
             <!-- CONTENIDO DE LA PORTADA -->
-            <div class="relative z-10 p-10 md:p-14 flex flex-col justify-between h-full min-h-[1050px]">
+            <div class="relative z-10 p-10 pt-12 md:p-14 md:pt-16 flex flex-col justify-between h-full min-h-[1050px]">
                 
                 <!-- HEADER / CABECERA CON TÍTULO DISTINTIVO -->
                 <div class="grid md:grid-cols-12 gap-6 items-center">
@@ -71,7 +91,6 @@
                     </div>
 
                     <div class="md:col-span-7 text-left md:text-right space-y-1">
-                        <!-- TÍTULO PRINCIPAL DEL DOCUMENTO -->
                         <span class="bg-white text-avanzar-dark font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-widest inline-block shadow-md mb-2 border border-blue-100">
                             📘 BROCHURE INSTITUCIONAL 2026
                         </span>
