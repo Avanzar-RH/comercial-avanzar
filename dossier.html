@@ -24,10 +24,32 @@
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Reglas estrictas para guardar/imprimir en PDF */
         @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0; /* Elimina márgenes blancos del navegador */
+            }
             .no-print { display: none !important; }
-            body { background-color: white !important; padding: 0 !important; }
-            .page-break { page-break-after: always; }
+            body { 
+                background-color: white !important; 
+                padding: 0 !important; 
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .page-container {
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .page-break { 
+                page-break-after: always; 
+                height: 100vh;
+            }
         }
     </style>
 </head>
@@ -41,10 +63,10 @@
     </div>
 
     <!-- CONTENEDOR PRINCIPAL -->
-    <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+    <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden page-container">
 
         <!-- ==========================================
-             PÁGINA 1: CARÁTULA DOSSIER (PALETA DE AZULES)
+             PÁGINA 1: CARÁTULA DOSSIER (CON PADDING SUPERIOR SEGURO)
              ========================================== -->
         <div class="min-h-[1050px] flex flex-col justify-between bg-white text-slate-900 relative page-break overflow-hidden">
             
@@ -59,8 +81,8 @@
                 </svg>
             </div>
 
-            <!-- CONTENIDO DE LA PORTADA DOSSIER -->
-            <div class="relative z-10 p-10 md:p-14 flex flex-col justify-between h-full min-h-[1050px]">
+            <!-- CONTENIDO DE LA PORTADA DOSSIER CON PADDING SUPERIOR REFUERZO -->
+            <div class="relative z-10 p-10 pt-12 md:p-14 md:pt-16 flex flex-col justify-between h-full min-h-[1050px]">
                 
                 <!-- HEADER / CABECERA EN AZULES -->
                 <div class="grid md:grid-cols-12 gap-6 items-center">
@@ -71,7 +93,6 @@
                     </div>
 
                     <div class="md:col-span-7 text-left md:text-right space-y-1">
-                        <!-- TÍTULO PRINCIPAL EN AZUL NOCHE CORPORATIVO -->
                         <span class="bg-avanzar-dark text-white font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-widest inline-block shadow-md mb-2 border border-blue-900">
                             📊 DOSSIER DE SERVICIOS &amp; TARIFARIO $ UYU
                         </span>
@@ -188,7 +209,6 @@
                             </div>
                         </div>
 
-                        <!-- SELECCIÓN REEMPLAZADA A AZUL CORPORATIVO -->
                         <div class="bg-white p-3.5 rounded-xl border-2 border-avanzar text-xs flex flex-col justify-between relative">
                             <span class="absolute -top-2 right-2 bg-avanzar text-white text-[8px] font-extrabold px-2 py-0.5 rounded">Respaldo 90 Días</span>
                             <div>
