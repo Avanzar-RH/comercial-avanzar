@@ -51,7 +51,6 @@
                 height: 100vh;
             }
             .bg-pdf-blue {
-                display: block !important;
                 background-color: #0062A3 !important;
                 background-image: linear-gradient(to bottom right, #0062A3, #004B7D) !important;
                 -webkit-print-color-adjust: exact !important;
@@ -73,12 +72,12 @@
     <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden page-container">
 
         <!-- ==========================================
-             PÁGINA 1: CARÁTULA DOSSIER (AZUL VISIBLE EN PDF)
+             PÁGINA 1: CARÁTULA DOSSIER (ALINEACIÓN PERFECTA SIN PISARSE)
              ========================================== -->
         <div class="min-h-[1050px] flex flex-col justify-between bg-white text-slate-900 relative page-break overflow-hidden">
             
-            <!-- Gran Arco Azul Orgánico Forzado para Impresión -->
-            <div class="absolute -left-20 -top-20 w-[460px] h-[1150px] bg-gradient-to-br from-avanzar to-avanzar-dark bg-pdf-blue rounded-r-[260px] shadow-2xl z-0 pointer-events-none"></div>
+            <!-- Gran Arco Azul Orgánico Restringido al Lado Izquierdo -->
+            <div class="absolute -left-20 -top-20 w-[380px] md:w-[400px] h-[1150px] bg-gradient-to-br from-avanzar to-avanzar-dark bg-pdf-blue rounded-r-[220px] shadow-2xl z-0 pointer-events-none"></div>
 
             <!-- Malla SVG Decorativa -->
             <div class="absolute inset-0 opacity-5 pointer-events-none z-0">
@@ -89,18 +88,20 @@
             </div>
 
             <!-- CONTENIDO DE LA PORTADA DOSSIER -->
-            <div class="relative z-10 p-10 pt-12 md:p-14 md:pt-16 flex flex-col justify-between h-full min-h-[1050px]">
+            <div class="relative z-10 p-8 pt-10 md:p-12 md:pt-12 flex flex-col justify-between h-full min-h-[1050px]">
                 
                 <!-- HEADER / CABECERA -->
                 <div class="grid md:grid-cols-12 gap-6 items-center">
-                    <div class="md:col-span-5 text-left">
-                        <div class="bg-white p-3 rounded-2xl shadow-lg inline-block border border-slate-100">
-                            <img src="logo-avanzar.png" alt="Avanzar RH" class="h-14 w-auto object-contain" onerror="this.onerror=null; this.src='https://avanzargestionhumana.com/wp-content/uploads/2023/08/logo-avanzar.png';">
+                    <!-- Logo Lado Izquierdo -->
+                    <div class="md:col-span-4 text-left">
+                        <div class="bg-white p-3 rounded-2xl shadow-md inline-block border border-slate-100">
+                            <img src="logo-avanzar.png" alt="Avanzar RH" class="h-12 w-auto object-contain" onerror="this.onerror=null; this.src='https://avanzargestionhumana.com/wp-content/uploads/2023/08/logo-avanzar.png';">
                         </div>
                     </div>
 
-                    <div class="md:col-span-7 text-left md:text-right space-y-1">
-                        <span class="bg-avanzar-dark text-white font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-widest inline-block shadow-md mb-2 border border-blue-900">
+                    <!-- Titular Lado Derecho (Strictly on White Background) -->
+                    <div class="md:col-span-8 text-left md:text-right space-y-1">
+                        <span class="bg-avanzar-dark text-white font-black text-xs px-4 py-1.5 rounded-full uppercase tracking-widest inline-block shadow-md mb-1 border border-blue-900">
                             📊 DOSSIER DE SERVICIOS &amp; TARIFARIO $ UYU
                         </span>
                         <h2 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Noelia Gorgerino</h2>
@@ -109,59 +110,59 @@
                 </div>
 
                 <!-- CUERPO PRINCIPAL DOSSIER -->
-                <div class="grid md:grid-cols-12 gap-8 items-center my-auto py-8">
+                <div class="grid md:grid-cols-12 gap-8 items-center my-auto py-6">
                     
-                    <!-- Lado Izquierdo sobre la curva azul -->
-                    <div class="md:col-span-5 text-slate-950 space-y-6 md:pr-4">
-                        <div class="bg-white p-6 rounded-2xl border-2 border-avanzar-border shadow-lg space-y-4">
-                            <span class="bg-avanzar-dark text-white font-extrabold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                    <!-- LADO IZQUIERDO: TARJETA BLANCA SOBRE FONDO AZUL -->
+                    <div class="md:col-span-4 text-slate-950 space-y-6">
+                        <div class="bg-white p-5 rounded-2xl border-2 border-avanzar-border shadow-xl space-y-3">
+                            <span class="bg-avanzar-dark text-white font-extrabold text-[9px] px-2.5 py-1 rounded-full uppercase tracking-wider inline-block">
                                 Documento de Inversión
                             </span>
                             
-                            <h3 class="text-xl font-black text-slate-950 leading-snug">
+                            <h3 class="text-lg font-black text-slate-950 leading-tight">
                                 Propuesta Económica B2B
                             </h3>
                             
-                            <p class="text-xs text-slate-800 font-extrabold leading-relaxed">
+                            <p class="text-[11px] text-slate-700 font-extrabold leading-relaxed">
                                 Valores transparentes en Pesos Uruguayos ($ UYU), cotizaciones a medida y respaldo de reemplazo por escrito.
                             </p>
 
-                            <div class="pt-2 flex flex-col items-center md:items-start space-y-2">
-                                <a href="https://avanzar-rh.github.io/comercial-avanzar/" target="_blank" class="bg-white p-2.5 rounded-2xl border-2 border-avanzar shadow-md inline-block hover:scale-105 transition">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://avanzar-rh.github.io/comercial-avanzar/" alt="QR Web Comercial Avanzar" class="w-28 h-28">
+                            <div class="pt-2 flex flex-col items-center space-y-1.5">
+                                <a href="https://avanzar-rh.github.io/comercial-avanzar/" target="_blank" class="bg-white p-2 rounded-xl border border-avanzar shadow-sm inline-block hover:scale-105 transition">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://avanzar-rh.github.io/comercial-avanzar/" alt="QR Web Comercial Avanzar" class="w-24 h-24">
                                 </a>
-                                <span class="text-[10px] font-black text-avanzar-dark uppercase tracking-wider">Conocé los planes interactivos</span>
+                                <span class="text-[9px] font-black text-avanzar-dark uppercase tracking-wider text-center">Conocé los planes interactivos</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Lado Derecho -->
-                    <div class="md:col-span-7 text-slate-900 space-y-6 md:pl-4">
-                        <div class="space-y-4">
+                    <!-- LADO DERECHO: TITULARES Y PRECIOS 100% SOBRE FONDO BLANCO -->
+                    <div class="md:col-span-8 text-slate-900 space-y-6 pl-0 md:pl-4">
+                        <div class="space-y-3">
                             <span class="bg-avanzar-light text-avanzar-dark font-black text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block border border-avanzar-border shadow-sm">
                                 📋 Propuesta de Negocio
                             </span>
 
-                            <h1 class="text-3xl md:text-5xl font-black leading-tight text-slate-900 tracking-tight">
+                            <h1 class="text-3xl md:text-4xl font-black leading-tight text-slate-900 tracking-tight">
                                 Cotización &amp; Esquema de Servicios
                             </h1>
 
-                            <p class="text-sm md:text-base text-slate-900 font-semibold leading-relaxed">
+                            <p class="text-xs md:text-sm text-slate-800 font-medium leading-relaxed">
                                 Desglose transparente de honorarios para Sprints de Ordenamiento Operativo de 14 días y Membresías de Dirección de Gestión Humana externalizada.
                             </p>
                         </div>
 
-                        <!-- Tarjetas de precios -->
-                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-300">
-                            <div class="bg-amber-100/90 border border-amber-300 p-4 rounded-2xl shadow-sm">
-                                <span class="block text-[11px] font-black text-amber-950 uppercase tracking-wider">Sprints Operativos</span>
-                                <span class="block text-xl font-black text-slate-950 mt-1">Desde $19.900</span>
-                                <span class="text-[10px] text-amber-950 font-bold">Proyectos de 14 días</span>
+                        <!-- Tarjetas de precios sobre área blanca libre -->
+                        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-200">
+                            <div class="bg-amber-50 border border-amber-300 p-3.5 rounded-2xl shadow-sm">
+                                <span class="block text-[10px] font-black text-amber-950 uppercase tracking-wider">Sprints Operativos</span>
+                                <span class="block text-lg font-black text-slate-950 mt-0.5">Desde $19.900</span>
+                                <span class="text-[10px] text-amber-900 font-bold">Proyectos de 14 días</span>
                             </div>
 
-                            <div class="bg-avanzar-light border-2 border-avanzar-border p-4 rounded-2xl shadow-sm">
-                                <span class="block text-[11px] font-black text-avanzar-dark uppercase tracking-wider">Membresías / Mes</span>
-                                <span class="block text-xl font-black text-avanzar-dark mt-1">Desde $10.900</span>
+                            <div class="bg-avanzar-light border border-avanzar-border p-3.5 rounded-2xl shadow-sm">
+                                <span class="block text-[10px] font-black text-avanzar-dark uppercase tracking-wider">Membresías / Mes</span>
+                                <span class="block text-lg font-black text-avanzar-dark mt-0.5">Desde $10.900</span>
                                 <span class="text-[10px] text-avanzar-dark font-bold">Acompañamiento continuo</span>
                             </div>
                         </div>
@@ -169,13 +170,13 @@
 
                 </div>
 
-                <!-- PIE DE PORTADA DOSSIER -->
-                <div class="pt-6 border-t border-slate-300 grid md:grid-cols-12 items-center text-xs gap-4 relative z-10">
+                <!-- PIE DE PORTADA DOSSIER SOBRE ÁREA LIMPIA -->
+                <div class="pt-4 border-t border-slate-200 grid md:grid-cols-12 items-center text-xs gap-3 relative z-10">
                     <div class="md:col-span-6 flex flex-wrap gap-2 text-slate-950 font-black">
-                        <a href="https://wa.me/59899343810" target="_blank" class="bg-slate-200 hover:bg-slate-300 text-slate-950 px-3 py-1.5 rounded-xl border border-slate-400 transition flex items-center gap-1.5 shadow-sm">
+                        <a href="https://wa.me/59899343810" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-950 px-3 py-1.5 rounded-xl border border-slate-300 transition flex items-center gap-1.5 shadow-sm">
                             📲 <span class="text-slate-950 font-extrabold">+598 99 343 810</span>
                         </a>
-                        <a href="mailto:avanzarrh@gmail.com" class="bg-slate-200 hover:bg-slate-300 text-slate-950 px-3 py-1.5 rounded-xl border border-slate-400 transition flex items-center gap-1.5 shadow-sm">
+                        <a href="mailto:avanzarrh@gmail.com" class="bg-slate-100 hover:bg-slate-200 text-slate-950 px-3 py-1.5 rounded-xl border border-slate-300 transition flex items-center gap-1.5 shadow-sm">
                             ✉️ <span class="text-slate-950 font-extrabold">avanzarrh@gmail.com</span>
                         </a>
                     </div>
